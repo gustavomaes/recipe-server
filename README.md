@@ -1,7 +1,7 @@
 # Recipes API 0.1
 
 
-This API was written in NodeJS (ExpressJS + JWT + MongoDV).
+This API was written in NodeJS (ExpressJS + JWT + MongoDB).
 
 
 ## Authentication:
