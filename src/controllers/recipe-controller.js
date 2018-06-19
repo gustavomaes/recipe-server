@@ -51,7 +51,6 @@ exports.post = async (req, res, next) => {
 
         let newRecipe = {
             "name": req.body.name,
-            "description": req.body.description,
             "user": dataToken.id,
             "time": req.body.time,
             "serving": req.body.serving,
@@ -71,7 +70,6 @@ exports.put = async (req, res, next) => {
 
     let updateRecipe = {
         name: req.body.name,
-        description: req.body.description,
         time: req.body.time,
         serving: req.body.serving,
         ingredients: req.body.ingredients,

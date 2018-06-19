@@ -7,10 +7,6 @@ const schema = new Schema({
         required: [true, 'Nome é obrigatório'],
         trim: true
     },
-    description: {
-        type: String,
-        required: [true, 'Descrição é obrigatório'],
-    },
     user: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'
