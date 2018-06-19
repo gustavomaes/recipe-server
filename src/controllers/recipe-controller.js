@@ -30,6 +30,18 @@ exports.getById = async (req, res, next) => {
     }
 }
 
+exports.getByUser = async (req, res, next) => {
+    try {
+        const token = req.headers['x-access-token']
+        const dataToken = await authService.decodeToken(token)
+
+        let data = await repository.getByUser(dataToken.id)
+        res.status(200).send(data)
+    } catch (error) {
+        res.status(500).send({ message: 'Erro ao buscar as receitas', data: error })
+    }
+}
+
 exports.post = async (req, res, next) => {
     try {
         const token = req.headers['x-access-token']

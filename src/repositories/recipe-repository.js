@@ -11,6 +11,11 @@ exports.getById = async (id) => {
     return res
 }
 
+exports.getByUser = async (userId) => {
+    const res = await Recipe.find({ user: userId })
+    return res
+}
+
 exports.create = async (data) => {
     let recipe = new Recipe(data)
     await recipe.save()

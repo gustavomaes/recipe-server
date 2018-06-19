@@ -42,7 +42,6 @@ exports.authenticate = async (req, res, next) => {
         })
 
         if (!user) {
-            console.log('no user')
             res.status(404).send({ message: 'E-mail ou senha inválidos' })
             return
         }
@@ -117,8 +116,15 @@ exports.updatePassword = async (req, res, next) => {
         const token = req.headers['x-access-token']
         const dataToken = await authService.decodeToken(token)
 
+        let user = await repository.getPasswdById(dataToken.id)
+
+        if (user.password !== md5(req.body.password + global.SALT_KEY)) {
+            res.status(500).send({ message: 'Senha incorreta' })
+            return            
+        }
+
         await repository.updatePassword(dataToken.id, {
-            password: md5(req.body.password + global.SALT_KEY)            
+            password: md5(req.body.newPassword + global.SALT_KEY)            
         })
 
         res.status(200).send({ message: 'Senha atualizada com sucesso.' })

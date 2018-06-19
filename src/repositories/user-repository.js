@@ -19,6 +19,11 @@ exports.getById = async (id) => {
     return res
 }
 
+exports.getPasswdById = async (id) => {
+    const res = await User.findById({ _id: id }, 'password')
+    return res
+}
+
 exports.create = async (data) => {
     let user = new User(data)
     await user.save()
