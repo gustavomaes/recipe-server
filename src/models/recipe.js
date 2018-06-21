@@ -12,7 +12,7 @@ const schema = new Schema({
         ref: 'User'
     },
     time: {
-        type: Number,
+        type: String,
         required: [true, 'Tempo é obrigatório'],
     },
     serving: {
@@ -24,15 +24,7 @@ const schema = new Schema({
         trim: true
     },
     ingredients: [{
-        name: {
-            type: String,
-            required: [true, 'Nome do ingrediente é obrigatório'],
-            trim: true
-        },
-        quantity: {
-            type: String,
-            required: [true, 'Quantidade do ingrediente é obrigatório'],
-        }
+        type: String
     }],
     preparation: [{
         type: String

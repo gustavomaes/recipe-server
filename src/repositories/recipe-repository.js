@@ -2,7 +2,8 @@ const mongoose = require('mongoose')
 const Recipe = mongoose.model('Recipe')
 
 exports.get = async () => {
-    const res = await Recipe.find({}, 'name photoUrl user')
+    const res = await Recipe.find({})
+                            .populate('user', 'name')
     return res
 }
 

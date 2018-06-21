@@ -42,7 +42,7 @@ exports.authenticate = async (req, res, next) => {
         })
 
         if (!user) {
-            res.status(404).send({ message: 'E-mail ou senha inválidos' })
+            res.status(500).send({ message: 'E-mail ou senha inválidos' })
             return
         }
         
