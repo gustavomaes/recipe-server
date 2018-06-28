@@ -128,6 +128,10 @@ exports.delete = async (req, res, next) => {
 async function saveImage(photo) {
     let fileName = 'food-base.png'
     let keyName = guid.raw() + '.jpg'
+    if (photo === null) {
+        return `https://s3.amazonaws.com/recipes-dev/${fileName}`        
+    }
+
     buf = new Buffer(photo.replace(/^data:image\/\w+;base64,/, ""), 'base64')
 
     let dataImg = {

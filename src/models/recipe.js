@@ -4,7 +4,7 @@ const Schema = mongoose.Schema
 const schema = new Schema({
     name: {
         type: String,
-        required: [true, 'Nome é obrigatório'],
+        required: [true, 'Título é obrigatório'],
         trim: true
     },
     user: {
