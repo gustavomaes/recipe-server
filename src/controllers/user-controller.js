@@ -86,12 +86,14 @@ exports.update = async (req, res, next) => {
         const dataToken = await authService.decodeToken(token)
 
         await repository.update(dataToken.id, {
-            name: req.body.email,
+            name: req.body.name,
             email: req.body.email,
             role: dataToken.role
         })
 
-        res.status(200).send({ message: 'Usuário atualizado com sucesso.' })
+        const user = await repository.getById(dataToken.id)
+
+        res.status(200).send({ data: user, message: 'Usuário atualizado com sucesso.' })
     } catch (error) {
         res.status(500).send({ message: 'Erro ao atualizar o usuário', data: error })
     }

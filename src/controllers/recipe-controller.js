@@ -47,7 +47,6 @@ exports.post = async (req, res, next) => {
         const token = req.headers['x-access-token']
         const dataToken = await authService.decodeToken(token)
 
-        console.log(dataToken)
         const photoUrl = await saveImage(req.body.photo)
 
         let newRecipe = {
@@ -120,7 +119,6 @@ exports.delete = async (req, res, next) => {
 
         res.status(200).send({ message: 'Receita removida com sucesso.' })
     } catch (error) {
-        console.log(error)
         res.status(500).send({ message: 'Erro ao remover a receita', data: error })
     }
 }
