@@ -27,11 +27,7 @@ exports.getPasswdById = async (id) => {
 exports.create = async (data) => {
     let user = new User(data)
     await user.save()
-    return { 
-        name: user.name,
-        email: user.email,
-        role: user.role
-    }
+    return user
 }
 
 exports.update = async (id, data) => {

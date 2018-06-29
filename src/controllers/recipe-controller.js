@@ -47,6 +47,7 @@ exports.post = async (req, res, next) => {
         const token = req.headers['x-access-token']
         const dataToken = await authService.decodeToken(token)
 
+        console.log(dataToken)
         const photoUrl = await saveImage(req.body.photo)
 
         let newRecipe = {
