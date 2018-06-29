@@ -102,7 +102,7 @@ exports.update = async (req, res, next) => {
 exports.updateById = async (req, res, next) => {
     try {
         await repository.update(req.params.id, {
-            name: req.body.email,
+            name: req.body.name,
             email: req.body.email,
             role: req.body.role
         })
