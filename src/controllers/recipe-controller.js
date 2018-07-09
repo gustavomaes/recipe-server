@@ -6,19 +6,16 @@ const guid = require('guid')
 const repository = require('../repositories/recipe-repository')
 const authService = require('../services/auth-service')
 
-AWS.config.loadFromPath('./src/configs/s3_config.json');
+AWS.config.loadFromPath('./configs/s3_config.json');
 let s3Bucket = new AWS.S3({ params: { Bucket: 'recipes-dev', ACL: 'public-read' } });
 
 exports.get = async (req, res, next) => {
-    // Recipe.find({ active: true}, 'name description photoUrl') 
     let data = await repository.get()
     try {
         res.status(200).send(data)
     } catch (error) {
         res.status(500).send({ message: 'Erro ao buscar as receitas', data: error })
     }
-    // 
-
 }
 
 exports.getById = async (req, res, next) => {

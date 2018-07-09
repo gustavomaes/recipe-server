@@ -1,6 +1,5 @@
 # Configs
-src/configs
-
+configs
 # Logs
 logs
 *.log

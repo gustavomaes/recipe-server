@@ -10,7 +10,7 @@ const indexRoute = require('./routes/index-route')
 const recipeRoute = require('./routes/recipe-route')
 const userRoute = require('./routes/user-route')
 
-const config = require('./configs/config')
+const config = require('../configs/config')
 
 const app = express()
 
