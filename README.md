@@ -10,6 +10,7 @@ Application developed for study
 - [Endpoints](#endpoints)
 	- [Users](#users)
 		- [Authenticate/login](#authenticate/login)
+		- [Create](#create)
 
 
 
@@ -43,5 +44,21 @@ Gets a new Token/JWT for the required user.
 {
 	"email": "teste@teste.com",
 	"password": "123456"
+}
+```
+
+#### Create:
+
+`POST /user`: create new user.
+
+##### Body example:
+
+```
+{
+{
+	"name":"Teste",
+	"email":"teste@teste.com",
+	"password":"123456"
+}
 }
 ```
