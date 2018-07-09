@@ -38,7 +38,7 @@ exports.authenticate = async (req, res, next) => {
     try {
         let user = await repository.authenticate({
             email: req.body.email,
-            password: md5(req.body.password + global.SALT_KEY)
+            password: md5(req.body.password + process.env.SALT_KEY)
         })
 
         if (!user) {
@@ -64,7 +64,7 @@ exports.post = async (req, res, next) => {
         let data = await repository.create({
             name: req.body.name,
             email: req.body.email,
-            password: md5(req.body.password + global.SALT_KEY)
+            password: md5(req.body.password + process.env.SALT_KEY)
         })
 
         const token = await authService.generateToken({
@@ -120,13 +120,13 @@ exports.updatePassword = async (req, res, next) => {
 
         let user = await repository.getPasswdById(dataToken.id)
 
-        if (user.password !== md5(req.body.password + global.SALT_KEY)) {
+        if (user.password !== md5(req.body.password + process.env.SALT_KEY)) {
             res.status(500).send({ message: 'Senha incorreta' })
             return            
         }
 
         await repository.updatePassword(dataToken.id, {
-            password: md5(req.body.newPassword + global.SALT_KEY)            
+            password: md5(req.body.newPassword + process.env.SALT_KEY)            
         })
 
         res.status(200).send({ message: 'Senha atualizada com sucesso.' })

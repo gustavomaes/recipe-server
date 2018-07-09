@@ -10,11 +10,13 @@ const indexRoute = require('./routes/index-route')
 const recipeRoute = require('./routes/recipe-route')
 const userRoute = require('./routes/user-route')
 
-const config = require('../configs/config')
+if(process.env.NODE_ENV !== 'production') {
+    require('dotenv').load()
+}
 
 const app = express()
 
-mongoose.connect(config.connectionString)
+mongoose.connect(process.env.CONN_STRIN)
 
 app.use(bodyParser.json({
     limit: '10mb'

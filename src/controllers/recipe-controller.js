@@ -6,7 +6,7 @@ const guid = require('guid')
 const repository = require('../repositories/recipe-repository')
 const authService = require('../services/auth-service')
 
-AWS.config.loadFromPath('./configs/s3_config.json');
+// AWS.config.loadFromPath('./configs/s3_config.json');
 let s3Bucket = new AWS.S3({ params: { Bucket: 'recipes-dev', ACL: 'public-read' } });
 
 exports.get = async (req, res, next) => {
@@ -41,6 +41,8 @@ exports.getByUser = async (req, res, next) => {
 
 exports.post = async (req, res, next) => {
     try {
+        console.log(process.env.AWS_ACCESS_KEY_ID);
+        console.log(process.env.AWS_DEFAULT_REGION);
         const token = req.headers['x-access-token']
         const dataToken = await authService.decodeToken(token)
 
