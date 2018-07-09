@@ -9,10 +9,15 @@ Application developed for study
 - [Authentication](#authentication)
 - [Endpoints](#endpoints)
 	- [Users](#users)
-		- [Authenticate/login](#authenticate/login)
+		- [Authenticate](#authenticate)
 		- [Create a new user](#create-a-new-user)
 		- [Update your user](#update-your-user)
 		- [Update user by id](#update-user-by-id)
+		- [Update password](#update-password)
+		- [Get my user](#get-my-user)
+		- [Get user by id](#get-user-by-id)
+		- [Get all users](#get-all-users)
+		- [Delete user](#delete-user)
 
 
 
@@ -34,7 +39,7 @@ x-access-token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjViMjJjMDlkMzE3MGI4
 ## Endpoints
 ### Users:
 
-#### Authenticate/login:
+#### Authenticate:
 
 Gets a new Token/JWT for the required user.
 
@@ -53,11 +58,9 @@ Gets a new Token/JWT for the required user.
 
 ```
 {
-{
 	"name":"Teste",
 	"email":"teste@teste.com",
 	"password":"123456"
-}
 }
 ```
 
@@ -67,10 +70,8 @@ Gets a new Token/JWT for the required user.
 
 ```
 {
-{
 	"name":"Teste",
 	"email":"teste@teste.com"
-}
 }
 ```
 
@@ -80,9 +81,37 @@ Gets a new Token/JWT for the required user.
 
 ```
 {
-{
 	"name":"Teste",
 	"email":"teste@teste.com"
 }
+```
+
+#### Update password:
+
+`PUT /user/password` (authentication required): Update password from the logged user/token.
+
+```
+{
+	"password":"123456",
+	"newPassword":"1234567"
 }
 ```
+
+#### Get my user:
+
+`GET /user/me` (authentication required): Gets information from the logged user/token.
+
+#### Get user by id:
+
+`GET /user/:userId` (authentication required): Gets information from specific user. *Only admin*
+
+#### Get all users:
+
+`GET /user` (authentication required): Gets all registered users. *Only admin*
+
+#### Delete user:
+
+`DELETE /user/:userId` (authentication required): Remove a specific user. *Only admin*
+
+
+
