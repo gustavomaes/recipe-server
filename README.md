@@ -10,7 +10,9 @@ Application developed for study
 - [Endpoints](#endpoints)
 	- [Users](#users)
 		- [Authenticate/login](#authenticate/login)
-		- [Create](#create)
+		- [Create a new user](#create-a-new-user)
+		- [Update your user](#update-your-user)
+		- [Update user by id](#update-user-by-id)
 
 
 
@@ -38,8 +40,6 @@ Gets a new Token/JWT for the required user.
 
 `POST /user/auth`: generates a new token for the required user.
 
-#### Body example:
-
 ```
 {
 	"email": "teste@teste.com",
@@ -47,11 +47,9 @@ Gets a new Token/JWT for the required user.
 }
 ```
 
-#### Create:
+#### Create a new user:
 
 `POST /user`: create new user.
-
-##### Body example:
 
 ```
 {
@@ -59,6 +57,32 @@ Gets a new Token/JWT for the required user.
 	"name":"Teste",
 	"email":"teste@teste.com",
 	"password":"123456"
+}
+}
+```
+
+#### Update your user:
+
+`PUT /user` (authentication required): Update data from the logged user/token.
+
+```
+{
+{
+	"name":"Teste",
+	"email":"teste@teste.com"
+}
+}
+```
+
+#### Update user by id:
+
+`PUT /user/:userId` (authentication required): Update data for a specific user. Admin can update information from any.
+
+```
+{
+{
+	"name":"Teste",
+	"email":"teste@teste.com"
 }
 }
 ```
