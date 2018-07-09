@@ -18,6 +18,13 @@ Application developed for study
 		- [Get user by id](#get-user-by-id)
 		- [Get all users](#get-all-users)
 		- [Delete user](#delete-user)
+	- [Recipes](#recipes)
+		- [Create a new recipe](#create-a-new-recipe)
+		- [Update recipe by id](#update-recipe-by-id)
+		- [Get all recipes](#get-all-recipes)
+		- [Get recipe by id](#get-recipe-by-id)
+		- [Get my recipes](#get-my-recipes)
+		
 
 
 
@@ -37,6 +44,7 @@ x-access-token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjViMjJjMDlkMzE3MGI4
 ```  
 
 ## Endpoints
+
 ### Users:
 
 #### Authenticate:
@@ -113,5 +121,47 @@ Gets a new Token/JWT for the required user.
 
 `DELETE /user/:userId` (authentication required): Remove a specific user. *Only admin*
 
+### Recipes:
+#### Create a new recipe:
 
+`POST /recipe` (authentication required): Creates a new recipe to logged user.
 
+```
+{
+	"name": "Title",
+	"description": "Description",
+	"time": "55 min",
+	"serving": "5",
+	"ingredients": ["100g ingredient one", "1 Kg ingredient two", ...],
+	"preparation": ["first step", "second step", ...],
+	"photo":"data:image/jpeg;base64, ..."
+}
+```
+
+#### Update recipe by id:
+
+`PUT /recipe/:recipeId` (authentication required): Update data for a specific recipe. *Admin can update data from any run.*
+
+```
+{
+	"name": "New title",
+	"description": "New description",
+	"time": "40 min",
+	"serving": "3",
+	"ingredients": ["200g ingredient one", "1 Kg ingredient two", ...],
+	"preparation": ["first step", "second steo", ...],
+	"photo":"data:image/jpeg;base64, ..."
+}
+```
+
+#### Get all recipes:
+
+`GET /recipe`: Gets all recipes.
+
+#### Get recipe by id:
+
+`GET /recipe/:recipeId`: Gets information from specific recipe.
+
+#### Get my recipes:
+
+`GET /recipe/my` (authentication required): Gets recipes from the logged user/token.
