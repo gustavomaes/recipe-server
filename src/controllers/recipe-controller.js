@@ -41,8 +41,6 @@ exports.getByUser = async (req, res, next) => {
 
 exports.post = async (req, res, next) => {
     try {
-        console.log(process.env.AWS_ACCESS_KEY_ID);
-        console.log(process.env.AWS_DEFAULT_REGION);
         const token = req.headers['x-access-token']
         const dataToken = await authService.decodeToken(token)
 
