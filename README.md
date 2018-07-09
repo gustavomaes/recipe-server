@@ -6,6 +6,7 @@ Application developed for study
 ## Table of Contents
 
 - [Technology](#technology)
+- [Developing](#developing)
 - [Authentication](#authentication)
 - [Endpoints](#endpoints)
 	- [Users](#users)
@@ -33,6 +34,23 @@ Application developed for study
 - **NodeJS
 - **ExpressJS
 - **MongoDB
+
+## Developing
+
+1. **Clone the repository:**
+  ```sh
+  $ git clone git@github.com:gustavomaes/recipe-server.git
+  ```
+  
+2. **Install packages:**
+```sh
+$ yarn install
+```
+
+3. **Run server:**
+  ```sh
+  $ yarn start
+  ```
 
 ## Authentication:
 
