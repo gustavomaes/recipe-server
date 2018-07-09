@@ -31,9 +31,13 @@ Application developed for study
 
 ## Technology
 
-- **NodeJS
-- **ExpressJS
-- **MongoDB
+- **NodeJS**
+- **MongoDB**
+- [Express](https://github.com/expressjs/express)
+- [Mongoose](https://github.com/Automattic/mongoose)
+- [JSON Web Token](https://github.com/auth0/node-jsonwebtoken)
+- [AWS SDK](https://github.com/aws/aws-sdk-js)
+
 
 ## Developing
 
