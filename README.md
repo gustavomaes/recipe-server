@@ -1,4 +1,4 @@
-<img src="https://uc1a0f0ba809bb439379aeb4428b.dl.dropboxusercontent.com/p/thumb/AAES10B_6zzIR5R5zlxV6Eoav_qNiGACxRYVVhl7UEz6UDLNan0N92X0INwm9AV9oDtM7Cwklf44r8vgi3_qs29L0gvNB8IBWQAfx1HCYSwxtk7jwf3EbM4Dbl4E-124QmS11806PZAt7FXgfhit5DdXwQyRqkqaTBQeK1Bdn4PeNq7_V4FIEdoKr1MQFYfUX1AODYowqiqaqZBNwRf53Nsz2-s8bulExjmsevKt-gZdGg/p.png?preserve_transparency=1&size=2048x1536&size_mode=3" width="137px" height="137px" align="left"/>
+<img src="https://image.ibb.co/fAesKJ/Logo_Recipe.png" width="137px" height="137px" align="left"/>
 
 # Receipes API
 Application developed for study
